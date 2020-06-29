@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> Password Generator</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+       <script src="script.js"></script>
+
+    </head>
+    <body>
+
+         <!--Title Div-->
+        <div class="title-fluid">
+            <h1> Chase Gibsons Random Password Generator</h1>
+            <p> its pretty random alright </p> 
+        </div>
+        
+        <!--Main Div-->
+        <div class="body-fluid">
+
+            <h2>Instructions</h2>
+            <p>
+                create a password on how you feel necerssary, select the boxes on what criteria you would like to include 
+                <b> You must hit submit once you have done so, do not forget that portion of the details! </b>
+                <br>
+                <br>
+            </p>
+
+            <!--Form Data-->
+            <form>
+                <label><b>Password length (8-128 characters)</b></label>
+                <input type="number" name="message" id="myText" min="8" max="128" required>
+                </br>
+                <label><b>Include special characters? (@#$%)</b></label>
+                <input type="checkbox" name="symbols" id="specialInput" required>
+                </br>
+                <label><b>Include numbers? (0-9)</b></label>
+                <input type="checkbox" name="numbers" id="numberInput" required>
+                </br>
+                <label><i> <b>Include lowercase letters? (a-z)</b></i></label>
+                <input type="checkbox" name="lcLetters" id="lcInput" required>
+                </br>
+                <label><b>Include uppercase letters? (A-Z)</b></label>
+                <input type="checkbox" name="ucLetters" id="ucInput" required>
+                </br>
+                </br>
+            </form>
+            
+            <!--Submit Button-->
+			<button onclick="myFunction()">GENERATE PASSWORD</button><br/></br>
+
+            <p id="copyMe"><span id='display'></span></p>
+            </br>
+            <button onclick="copyInput()" id='copyButton'>Copy Password</button>
+
+        </div>
+         
+		 <script>
+function myFunction() {
+  document.getElementById("myText").value =  Math.floor((Math.random() * 128) + 1);
+}
+</script>
+    </body>
+<!--Link to JS File-->
+<script type="text/javascript" src="script.js"></script>
+
+</html>
